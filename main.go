@@ -7,9 +7,9 @@
 package main
 
 import (
+	a1 "assignment01bca/assignment01bca"
 	"fmt"
-
-	a1 "a1/assignment01bca"
+	//a1 "github.com/Zayn-Javed/assignment01bca"
 )
 
 func main() {
