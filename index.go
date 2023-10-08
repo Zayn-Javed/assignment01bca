@@ -14,15 +14,19 @@ import (
 
 func main() {
 	// Initialize the blockchain with a genesis block.
-	genesisBlock := myPackage.NewBlock("Genesis Transaction", 0, "")
+	genesisBlock := myPackage.NewBlock("Alice to Bob", 0, "")
 	Blockchain := []*myPackage.Block{genesisBlock}
+
+	// Add more blocks to the blockchain.
+	Blockchain = append(Blockchain, myPackage.NewBlock("Alexa to Micheal", 123, Blockchain[len(Blockchain)-1].Hash))
+	Blockchain = append(Blockchain, myPackage.NewBlock("John to Mellus", 456, Blockchain[len(Blockchain)-1].Hash))
 
 	// Display all blocks in the blockchain.
 	fmt.Print("\nBlockchain:\n")
 	myPackage.DisplayBlocks(Blockchain)
 
 	// Change the transaction of the second block.
-	concernedBlock := Blockchain[0]
+	concernedBlock := Blockchain[1]
 	changedTransaction := "Modified Transaction String"
 	myPackage.ChangeBlock(concernedBlock, changedTransaction)
 	fmt.Print("Block on index 1 has been changed!\n\n")
