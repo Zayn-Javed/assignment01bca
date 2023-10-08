@@ -4,7 +4,7 @@
 			Assignment # 1
 */
 
-package myPackage
+package assignment01bca
 
 import (
 	"crypto/sha256"
