@@ -14,12 +14,14 @@ import (
 
 func main() {
 	// Initialize the blockchain with a genesis block.
-	genesisBlock := myPackage.NewBlock("Alice to Bob", 0, "")
-	Blockchain := []*myPackage.Block{genesisBlock}
+	firstBlock := myPackage.NewBlock("Alice to Bob", 0, "")
+	Blockchain := []*myPackage.Block{firstBlock}
 
 	// Add more blocks to the blockchain.
-	Blockchain = append(Blockchain, myPackage.NewBlock("Alexa to Micheal", 123, Blockchain[len(Blockchain)-1].Hash))
-	Blockchain = append(Blockchain, myPackage.NewBlock("John to Mellus", 456, Blockchain[len(Blockchain)-1].Hash))
+	secondBlock := myPackage.NewBlock("Alexa to Micheal", 123, Blockchain[len(Blockchain)-1].Hash)
+	thirdBlock := myPackage.NewBlock("John to Mellus", 456, Blockchain[len(Blockchain)-1].Hash)
+	Blockchain = append(Blockchain, secondBlock)
+	Blockchain = append(Blockchain, thirdBlock)
 
 	// Display all blocks in the blockchain.
 	fmt.Print("\nBlockchain:\n")
